@@ -4,10 +4,15 @@ public class Radar {
     public  Integer limiteVelocidade;
     public String localizacao;
 
+    public Radar(Integer limitevelocidade, String localizacao){
+        this.limiteVelocidade = limitevelocidade;
+        this.localizacao = localizacao;
+    }
+
     public void avaliarVelocidadade(Carro carro){
-        if(carro.velocidade > this.limiteVelocidade){
+        if(carro.getVelocidade() > this.limiteVelocidade){
             //emitir notificação
-            emitirNotificacao(carro.placa, carro.velocidade);
+            emitirNotificacao(carro.getPlaca(), carro.getVelocidade());
         }
 
 
